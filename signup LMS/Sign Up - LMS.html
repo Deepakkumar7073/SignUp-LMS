@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: content-box;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('https://iujaipur.edu.in/assets/img/sliders/Slider-xl-1.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    
+    header {
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        padding: 15px 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+    }
+    
+    .logo {
+        font-size: 27px;
+        color: white;
+        user-select: none;
+        font-family: 'Dancing Script', cursive;
+    }
+    
+    .navigation {
+        padding: 20px;
+    }
+    
+    @media(max-width: 1026px) {
+        .logo {
+            font-size: 1.5em;
+            color: rgb(255, 255, 255);
+        }
+        header {
+            padding: 20px 50px;
+        }
+    }
+    
+    .navigation li {
+        display: inline-block;
+    }
+    
+    .navigation a {
+        position: relative;
+        font-size: 1.1em;
+        color: aliceblue;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 40px;
+    }
+    
+    .mobile-nav {
+        display: none;
+    }
+    
+    .mobile-nav li {
+        list-style: none;
+        ;
+    }
+    
+    .mobile-nav a {
+        color: #fff;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+    
+    .navigation a::after {
+        content: '';
+        position: absolute;
+        left: 0%;
+        bottom: -6px;
+        width: 100px;
+        height: 3px;
+        background: #fff;
+        border-radius: 5px;
+        transform-origin: 5px;
+        transform: scaleX(0);
+    }
+    
+    .navigation a :hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    
+    .navigation .btnlogin-popup {
+        width: 130px;
+        height: 50px;
+        background: transparent;
+        border: 2px solid #fff;
+        outline: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1.1em;
+        color: #fff;
+        font-weight: 500;
+        margin-left: 40px;
+        transition: .5s;
+    }
+    
+    .navigation .btnlogin-popup:hover {
+        background: #fff;
+        color: #51728b;
+    }
+    
+    @media (max-width: 860px) {
+        .navigation {
+            display: none;
+        }
+        .mobile-nav {
+            display: none;
+        }
+    }
+    
+    .from-box {
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .from-box h2 {
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .wrapper {
+        position: relative;
+        width: 408px;
+        height: 452px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 5);
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+    
+    @media( max-width: 402px) {
+        .wrapper {
+            border: 1.5px solid rgba(255, 255, 255, 5);
+            border-radius: 20px;
+            width: 330px;
+            height: 360px;
+        }
+        .logo {
+            font-size: 19px;
+        }
+        table,
+        td,
+        tr {
+            margin: -6px -9px 5px 10px;
+            padding: 2px;
+        }
+    }
+    
+    .input-box {
+        margin: 10px -13px 11px 2px;
+    }
+    
+    table,
+    tr,
+    td {
+        padding: 6px;
+        margin: 2px 4px 1px 3px;
+    }
+    
+    input,
+    select {
+        border-radius: 5px;
+    }
+    
+    .btn {
+        margin: 21px 0px -58px 0px;
+        width: 100px;
+        height: 33px;
+        background: #79797900;
+        border: -10px;
+        border-color: #fff;
+        outline: #60666c;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.1em;
+        color: #fff;
+        font-weight: 500;
+        margin-left: 94px;
+    }
+    
+    .btn:hover {
+        background: #17c3f3;
+        color: white;
+        opacity: 1;
+    }
+</style>
+
+<body>
+
+
+    <!-- 
+    <header>
+        <h2 class="logo">Hello! welcome here please fill-out this form</h2>
+        <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li> <a href="#">service</a></li>
+            <li><a href="#">Contect us</a></li>
+            <li><button class="btnlogin-popup">Login</button></li>
+        </ul>
+        <ul class="mobile-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li> <a href="#">service</a></li>
+            <li><a href="#">Contect us</a></li>
+            <li><button class="btnlogin-popup">Login</button></li>
+            <i class="bi bi-menu-down"></i>
+        </ul>
+        
+      
+    </header> -->
+    <DIV class="wrapper">
+        <div class="from-box ">
+            <u><b>
+                    <h2>Sign-Up</h2>
+                </b></u>
+            <form action=# method="post">
+                <table>
+                    <div class="input-box">
+                        <tr>
+                            <td> <label> Full Name ::</label></td>
+                            <td><input id="name" type="text" required></td>
+                        </tr>
+                    </div>
+                    <div class="input-box">
+                        <tr>
+                            <td><label>E-Mail :: </label></td>
+                            <td><input id="email" type="Email " required></td>
+                        </tr>
+                    </div>
+                    <div class="input-box">
+                        <tr>
+                            <td><label>DOB:: </label></td>
+                            <td><input id="dob" type="date" required></td>
+                        </tr>
+                    </div>
+                    <div class="input-box">
+                        <tr>
+                            <td><label>Phone No :: </label></td>
+                            <td><input id="phone" type="number" required></td>
+                            <!-- onsubmit="numberValidation()"  value="number" -->
+                            <!-- hear made a funtion to enter valid numbers -->
+                        </tr>
+                    </div>
+                    <!-- <div class="input-box">
+                       <tr>
+                       <td> <label>Address :: </label></td>
+                        <td><input id="address" type="text" required></td>
+                    </tr>
+    
+                    </div> -->
+
+                    <div class="input-box">
+                        <tr>
+                            <td><label> Gender :: </label></td>
+                            <td><input id="gender" type="radio" name="Gender" value="male" class="Gender">
+                                <label> Male<label>
+                                <input id="gender" type="radio" class="Gender" value="female" name="Gender">
+                                <label> Female</label>
+                                <input id="gender" type="radio" value="Other" class="Gender" name="Gender">
+                                <label>Other</label></td>
+                        </tr>
+                    </div>
+                    <div>
+                        <div class="input-box">
+                            <tr>
+                                <td><label for="City name">Department :: </label></td>
+                                <td><select id="city" name="My City" id="City" required>
+                                <option value=""Disable Selected Hidden> Select Department</option>
+                                <option value="ITS">ITS</option>
+                                <option value="IBS">IBS</option>
+                                <option value="ILS">ILS</option>
+                               
+                        </td>
+                        </tr>
+                        </div>
+                        <div >
+                            <tr> 
+                            <td colspan="2"><button class="btn"  type="submit" value="Submit">Sign-Up</button>
+                            
+                           
+                        </div>
+                    </tr>
+                    </table>
+                </form>
+            <script>
+            //       function numberValidation()
+            // {
+            //     let a = document.getElementById("phone").value;
+            //     if(isNaN(a)){
+            //         document.getElementById("phone").innerHTML = "**Only Numbers are allowed"; 
+            //         return false;
+            //     }
+            //     if(a.length<10){
+            //         document.getElementById("phone").innerHTML = "** enter only 10 digit number";
+            //         return false;
+            //     }
+            // }
+                // function details() {
+                    // let name = document.getElementById("name").value;
+                    // let email = document.getElementById("email").value;
+                    // let dob = document.getElementById("dob").value;
+                    // let phone = document.getElementById("phone").value;
+                    // let address = document.getElementById("address").value;
+                    // let gender = document.getElementById("gender").value;
+                    // let city = document.getElementById("city").value;
+                    // // Print values
+                    // document.write("Name is:" + name);
+                    // document.write("<br>");
+                    // document.write("Email is:" + email);
+                    // document.write("<br>");document.write("DOB is:" + dob); document.write("<br>");document.write("Phone no. is:" + phone);document.write("<br>");document.write("Address is:" + address);document.write("<br>"); document.write(" Gender is:" + gender);document.write("<br>");document.write(" City is:" + city);document.write("<br>");document.write("<b>");document.write("Thank you");document.write("<b>");
+              
+           
+                    // confirm("Your form submited successfully");     }
+
+
+
+
+          
+            </script>
+
+
+
+        </div>
+    </DIV>
+</body>
+
+</html>
